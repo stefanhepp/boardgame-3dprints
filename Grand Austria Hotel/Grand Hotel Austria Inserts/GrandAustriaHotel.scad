@@ -7,7 +7,7 @@ g_b_print_lid = true;
 g_b_print_box = true;
 
 // Focus on one box
-g_isolated_print_box = "Cards";
+g_isolated_print_box = "";
 
 // Used to visualize how all of the boxes fit together.
 g_b_visualization = false;
@@ -26,7 +26,7 @@ g_wall_thickness = 1.5;
 // The exception is the stackable box, where the bottom of the box is the lid of the box below,
 // in which case the tolerance also affects that box bottom.
 //
-g_tolerance = 0.15;
+g_tolerance = 0.18;
 
 // This adjusts the position of the lid detents downward.
 // The larger the value, the bigger the gap between the lid and the box.
@@ -36,7 +36,7 @@ data =
 [
     [   "Doors",
         [
-            [ BOX_SIZE_XYZ,                                     [103, 62, 32.0] ],
+            [ BOX_SIZE_XYZ,                                     [103, 62, 40.0] ],
             [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
@@ -53,17 +53,44 @@ data =
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 31, 27, 30.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 31, 27, 38.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [3,2] ],
                     [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
-                    [ CMP_CUTOUT_TYPE, EXTERIOR ],
+                    [ CMP_CUTOUT_WIDTH_PCT, 60 ],
                 ]
             ],
         ]
     ],
     [   "Cards",
         [
-            [ BOX_SIZE_XYZ,                                     [194.5, 99.5, 50.0] ],
+            [ BOX_SIZE_XYZ,                                     [131.5, 99.5, 34.0] ],
+            [ BOX_STACKABLE_B, t ],
+            [ ENABLED_B, t ],
+            [ BOX_LID,
+                [
+                    [ LID_SOLID_B, f],
+                    [ LID_FIT_UNDER_B, f],
+                    [ LABEL,
+                        [
+                            [ LBL_TEXT,     "Cards"],
+                            [ LBL_SIZE,     AUTO ],
+                        ]
+                    ],
+                ],
+            ],
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 32.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [2,1] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
+                    [ CMP_CUTOUT_WIDTH_PCT, 50],
+                ],
+            ],
+        ]
+    ],
+    [   "Cards Expansion",
+        [
+            [ BOX_SIZE_XYZ,                                     [131.5, 99.5, 17.0] ],
             [ BOX_STACKABLE_B, t ],
             [ ENABLED_B, t ],
             [ BOX_LID,
@@ -80,19 +107,18 @@ data =
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 48.0] ],
-                    [CMP_NUM_COMPARTMENTS_XY,               [3,1] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 15.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [2,1] ],
                     [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
-                    [ CMP_CUTOUT_TYPE, EXTERIOR ],
-                    [ CMP_CUTOUT_WIDTH_PCT, 60],
-                ]
+                    [ CMP_CUTOUT_WIDTH_PCT, 50],
+                ],
             ],
         ]
-    ],
-    [   "Setup",
+    ],    
+    [   "Setup Cards",
         [
-            [ BOX_SIZE_XYZ,                                     [64, 128.5, 50.0] ],
-            [ BOX_STACKABLE_B, f ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 12.0] ],
+            [ BOX_STACKABLE_B, t ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -102,78 +128,94 @@ data =
                         [
                             [ LBL_TEXT,     "Setup"],
                             [ LBL_SIZE,     AUTO ],
-                            [ ROTATION, 90 ],
                         ]
                     ],
                 ]
             ],
+            // A,B,C
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 9, 38, 48.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [37.5, 48, 10.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [3,1] ],
-                    [ CMP_PADDING_HEIGHT_ADJUST_XY, [ -8, -8 ] ],
-                    [ POSITION_XY, [0.5,MAX] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ t, t, t, t] ],
-                    [ CMP_CUTOUT_HEIGHT_PCT, 30],
-                    [ CMP_CUTOUT_TYPE, BOTH ],
+                    [ POSITION_XY, [0.5,0] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ t, f, f, f] ],
                 ]
             ],
+            // Player round cards
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 9, 27, 48.0] ],
-                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
-                    [ CMP_PADDING_HEIGHT_ADJUST_XY, [ -3, -3 ] ],
-                    [ POSITION_XY, [31.5,MAX] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ f, f, t, t] ],
-                    [ CMP_CUTOUT_HEIGHT_PCT, 30],
-                    [ CMP_CUTOUT_TYPE, BOTH ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [27, 46, 10.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [3,1] ],
+                    [ POSITION_XY, [0,MAX] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ f, t, f, f] ],
+                    [ CMP_CUTOUT_WIDTH_PCT, 60],
                 ]
             ],
+            // 75/150/225 points counter
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 7, 27, 48.0] ],
-                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
-                    [ CMP_PADDING_HEIGHT_ADJUST_XY, [ -3, -3 ] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ f, f, t, t] ],
-                    [ CMP_CUTOUT_HEIGHT_PCT, 30],
-                    [ CMP_CUTOUT_TYPE, BOTH ],
-                    [ POSITION_XY, [41.5,MAX] ]
-                ]
-            ],
-            [ BOX_COMPONENT,
-                [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 5, 27, 48.0] ],
-                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
-                    [ CMP_PADDING_HEIGHT_ADJUST_XY, [ -3, -3 ] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
-                    [ CMP_CUTOUT_HEIGHT_PCT, 30],
-                    [ CMP_CUTOUT_TYPE, BOTH ],
-                    [ POSITION_XY, [49.5, MAX] ]
-                ]
-            ],
-            [ BOX_COMPONENT,
-                [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 35, 84.5, 48.0] ],
-                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
-                    [ POSITION_XY, [0, 0] ]
-                ]
-            ],
-            [ BOX_COMPONENT,
-                [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 24, 23, 40.0] ],
-                    [CMP_NUM_COMPARTMENTS_XY,               [1, 4] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
-                    [ POSITION_XY, [MAX, 0] ],
-                    [ CMP_SHAPE, FILLET ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [27, 23, 10.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [1,2] ],
+                    [ POSITION_XY, [MAX, MAX] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ f, f, f, t] ],
+                    [ CMP_CUTOUT_WIDTH_PCT, 60],
                 ]
             ],
         ]
     ],
-    [   "Resources",
+    [   "Setup Items",
         [
-            [ BOX_SIZE_XYZ,                                     [103, 103, 50.0] ],
-            [ BOX_STACKABLE_B, f ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 22.0] ],
+            [ BOX_STACKABLE_B, t ],
+            [ ENABLED_B, t ],
+            [ BOX_LID,
+                [
+                    [ LID_SOLID_B, f],
+                    [ LID_FIT_UNDER_B, f],
+                    [ LABEL,
+                        [
+                            [ LBL_TEXT,     "Setup"],
+                            [ LBL_SIZE,     AUTO ],
+                        ]
+                    ],
+                ]
+            ],
+            // 14 Dice
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [116.0, 46, 16.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
+                    [ POSITION_XY, [0.5,0] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ f, f, t, t] ],
+                    [ CMP_CUTOUT_HEIGHT_PCT, 30],
+                ]
+            ],
+            // 4 x 6 Player tokens
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [20, 52, 20.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [4,1] ],
+                    [ POSITION_XY, [0,MAX] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
+                    [ CMP_CUTOUT_WIDTH_PCT, 60],
+                ]
+            ],
+            // Emperor
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [31, 48, 20.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
+                    [ POSITION_XY, [MAX, MAX] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
+                    [ CMP_CUTOUT_WIDTH_PCT, 60],
+                ]
+            ],
+        ]
+    ],
+    [   "Resources Meeples",
+        [
+            [ BOX_SIZE_XYZ,                                     [118, 103, 30.0] ],
+            [ BOX_STACKABLE_B, t ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -189,13 +231,40 @@ data =
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 48.5, 48.5, 30.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 54.5, 48.5, 28.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [2,2] ],
                     [ CMP_SHAPE, FILLET ],
                 ]
             ],
         ]
     ],
+    [   "Resources Cubes",
+        [
+            [ BOX_SIZE_XYZ,                                     [118, 103, 22.0] ],
+            [ BOX_STACKABLE_B, t ],
+            [ ENABLED_B, t ],
+            [ BOX_LID,
+                [
+                    [ LID_SOLID_B, f],
+                    [ LID_FIT_UNDER_B, f],
+                    [ LABEL,
+                        [
+                            [ LBL_TEXT,     "Resources"],
+                            [ LBL_SIZE,     AUTO ],
+                        ]
+                    ],
+                ]
+            ],
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 115.0, 99.0, 20.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
+                    [ CMP_SHAPE, FILLET ],
+                ]
+            ],
+        ]
+    ],
+
 ];
 
 MakeAll();
