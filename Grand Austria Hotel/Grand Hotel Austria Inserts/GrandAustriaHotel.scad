@@ -1,13 +1,13 @@
 include <boardgame_insert_toolkit_lib.2.scad>;
 
 // determines whether lids are output.
-g_b_print_lid = true;
+g_b_print_lid = false;
 
 // determines whether boxes are output.
 g_b_print_box = true;
 
 // Focus on one box
-g_isolated_print_box = "";
+g_isolated_print_box = "Setup Items";
 
 // Used to visualize how all of the boxes fit together.
 g_b_visualization = false;
@@ -49,6 +49,13 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ]
             ],
             [ BOX_COMPONENT,
@@ -63,8 +70,8 @@ data =
     ],
     [   "Cards",
         [
-            [ BOX_SIZE_XYZ,                                     [131.5, 99.5, 34.0] ],
-            [ BOX_STACKABLE_B, t ],
+            [ BOX_SIZE_XYZ,                                     [131.5, 99.5, 40.0] ],
+            [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -76,11 +83,18 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ],
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 32.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 38.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [2,1] ],
                     [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
                     [ CMP_CUTOUT_WIDTH_PCT, 50],
@@ -90,8 +104,8 @@ data =
     ],
     [   "Cards Expansion",
         [
-            [ BOX_SIZE_XYZ,                                     [131.5, 99.5, 17.0] ],
-            [ BOX_STACKABLE_B, t ],
+            [ BOX_SIZE_XYZ,                                     [131.5, 99.5, 19.0] ],
+            [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -103,11 +117,18 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ]
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 15.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 17.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [2,1] ],
                     [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
                     [ CMP_CUTOUT_WIDTH_PCT, 50],
@@ -117,8 +138,8 @@ data =
     ],    
     [   "Setup Cards",
         [
-            [ BOX_SIZE_XYZ,                                     [120, 103, 12.0] ],
-            [ BOX_STACKABLE_B, t ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 15.0] ],
+            [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -130,12 +151,19 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ]
             ],
             // A,B,C
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [37.5, 48, 10.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [37.5, 48, 12.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [3,1] ],
                     [ POSITION_XY, [0.5,0] ],
                     [ CMP_CUTOUT_SIDES_4B, [ t, f, f, f] ],
@@ -144,7 +172,7 @@ data =
             // Player round cards
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [27, 46, 10.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [27, 46, 12.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [3,1] ],
                     [ POSITION_XY, [0,MAX] ],
                     [ CMP_CUTOUT_SIDES_4B, [ f, t, f, f] ],
@@ -154,7 +182,7 @@ data =
             // 75/150/225 points counter
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [27, 23, 10.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [27, 23, 12.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [1,2] ],
                     [ POSITION_XY, [MAX, MAX] ],
                     [ CMP_CUTOUT_SIDES_4B, [ f, f, f, t] ],
@@ -165,8 +193,8 @@ data =
     ],
     [   "Setup Items",
         [
-            [ BOX_SIZE_XYZ,                                     [120, 103, 22.0] ],
-            [ BOX_STACKABLE_B, t ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 23.0] ],
+            [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -178,12 +206,19 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ]
             ],
             // 14 Dice
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [116.0, 46, 16.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [116.0, 46, 17.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
                     [ POSITION_XY, [0.5,0] ],
                     [ CMP_CUTOUT_SIDES_4B, [ f, f, t, t] ],
@@ -193,7 +228,7 @@ data =
             // 4 x 6 Player tokens
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [20, 52, 20.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [20, 52, 21.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [4,1] ],
                     [ POSITION_XY, [0,MAX] ],
                     [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
@@ -203,7 +238,7 @@ data =
             // Emperor
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [31, 48, 20.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [31, 48, 21.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
                     [ POSITION_XY, [MAX, MAX] ],
                     [ CMP_CUTOUT_SIDES_4B, [ f, f, f, f] ],
@@ -214,8 +249,8 @@ data =
     ],
     [   "Resources Meeples",
         [
-            [ BOX_SIZE_XYZ,                                     [118, 103, 30.0] ],
-            [ BOX_STACKABLE_B, t ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 30.0] ],
+            [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -227,11 +262,18 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ]
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 54.5, 48.5, 28.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 57.0, 48.5, 28.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [2,2] ],
                     [ CMP_SHAPE, FILLET ],
                 ]
@@ -240,8 +282,8 @@ data =
     ],
     [   "Resources Cubes",
         [
-            [ BOX_SIZE_XYZ,                                     [118, 103, 22.0] ],
-            [ BOX_STACKABLE_B, t ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 20.0] ],
+            [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
                 [
@@ -253,12 +295,28 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_N1,               8 ],
+                    [ LID_PATTERN_N2,               8 ],
+                    [ LID_PATTERN_ANGLE,            22.5 ],
+                    [ LID_PATTERN_ROW_OFFSET,       10 ],
+                    [ LID_PATTERN_COL_OFFSET,       130 ],
+                    [ LID_PATTERN_THICKNESS,        0.6 ]
                 ]
             ],
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 115.0, 99.0, 20.0] ],
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 80.0, 99.0, 18.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
+                    [ POSITION_XY, [0, 0.5] ],
+                    [ CMP_SHAPE, FILLET ],
+                ]
+            ],
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ 34.0, 99.0, 18.0] ],
+                    [CMP_NUM_COMPARTMENTS_XY,               [1,1] ],
+                    [ POSITION_XY, [MAX, 0.5] ],
                     [ CMP_SHAPE, FILLET ],
                 ]
             ],
