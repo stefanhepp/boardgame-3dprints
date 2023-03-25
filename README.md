@@ -9,9 +9,13 @@ Box inserts and models for Grand Hotel Austria and its extension Lets Waltz, bas
 The inserts were designed to hold some of the expansion cards and items in the base game box, since space in the expansion box is quite limited.
 
 The following models were used:
-  - Emperor pawn: Using the model by Qualith from https://www.thingiverse.com/thing:5005617
+  - Emperor pawn: Model by Qualith from https://www.thingiverse.com/thing:5005617.
+  - Champagne bottle: Model by YDesign3D from https://www.thingiverse.com/thing:5860285/files.
+    For printing scale down to 20% in the slicer.
+  - Whine glass: Model by Nersi from https://www.thingiverse.com/thing:1377060
   - Grand Hotel Austria insert: Based on the SCAD design by Veritaas from https://www.thingiverse.com/thing:4942296, 
-    but modified to fit some expansion items and meeple items.
+    but modified to fit some expansion items and meeple items and fix some cutouts.
+    
 
 
 License

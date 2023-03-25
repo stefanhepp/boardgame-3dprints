@@ -7,7 +7,7 @@ g_b_print_lid = false;
 g_b_print_box = true;
 
 // Focus on one box
-g_isolated_print_box = "Setup Items";
+g_isolated_print_box = "Resources Meeples";
 
 // Used to visualize how all of the boxes fit together.
 g_b_visualization = false;
@@ -26,7 +26,7 @@ g_wall_thickness = 1.5;
 // The exception is the stackable box, where the bottom of the box is the lid of the box below,
 // in which case the tolerance also affects that box bottom.
 //
-g_tolerance = 0.18;
+g_tolerance = 0.15;
 
 // This adjusts the position of the lid detents downward.
 // The larger the value, the bigger the gap between the lid and the box.
@@ -49,6 +49,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
@@ -63,6 +64,7 @@ data =
                     [CMP_COMPARTMENT_SIZE_XYZ,  [ 31, 27, 38.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [3,2] ],
                     [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
+                    [ CMP_CUTOUT_TYPE, EXTERIOR ],
                     [ CMP_CUTOUT_WIDTH_PCT, 60 ],
                 ]
             ],
@@ -83,6 +85,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
@@ -96,7 +99,8 @@ data =
                 [
                     [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 38.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [2,1] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ t, f, f, f] ],
+                    [ CMP_CUTOUT_TYPE, EXTERIOR ],
                     [ CMP_CUTOUT_WIDTH_PCT, 50],
                 ],
             ],
@@ -117,6 +121,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
@@ -130,7 +135,8 @@ data =
                 [
                     [CMP_COMPARTMENT_SIZE_XYZ,  [ 61.5, 93.5, 17.0] ],
                     [CMP_NUM_COMPARTMENTS_XY,               [2,1] ],
-                    [ CMP_CUTOUT_SIDES_4B, [ t, t, f, f] ],
+                    [ CMP_CUTOUT_SIDES_4B, [ t, f, f, f] ],
+                    [ CMP_CUTOUT_TYPE, EXTERIOR ],
                     [ CMP_CUTOUT_WIDTH_PCT, 50],
                 ],
             ],
@@ -151,6 +157,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
@@ -206,6 +213,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
@@ -249,7 +257,7 @@ data =
     ],
     [   "Resources Meeples",
         [
-            [ BOX_SIZE_XYZ,                                     [120, 103, 30.0] ],
+            [ BOX_SIZE_XYZ,                                     [120, 103, 19.0] ],
             [ BOX_STACKABLE_B, f ],
             [ ENABLED_B, t ],
             [ BOX_LID,
@@ -262,6 +270,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
@@ -295,6 +304,7 @@ data =
                             [ LBL_SIZE,     AUTO ],
                         ]
                     ],
+                    [ LID_STRIPE_WIDTH, 1.6 ],
                     [ LID_PATTERN_RADIUS,         10],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
