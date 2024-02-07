@@ -1,13 +1,13 @@
 include <boardgame_insert_toolkit_lib.2.scad>;
 
 // determines whether lids are output.
-g_b_print_lid = false;
+g_b_print_lid = true;
 
 // determines whether boxes are output.
-g_b_print_box = true;
+g_b_print_box = false;
 
 // Focus on one box
-g_isolated_print_box = "Resources Meeples";
+g_isolated_print_box = "Setup Items";
 
 // Used to visualize how all of the boxes fit together.
 g_b_visualization = false;
@@ -50,7 +50,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
@@ -86,7 +86,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
@@ -122,7 +122,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
@@ -158,7 +158,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
@@ -214,7 +214,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
@@ -271,7 +271,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
@@ -305,7 +305,7 @@ data =
                         ]
                     ],
                     [ LID_STRIPE_WIDTH, 1.6 ],
-                    [ LID_PATTERN_RADIUS,         10],        
+                    [ LID_PATTERN_RADIUS,         7],        
                     [ LID_PATTERN_N1,               8 ],
                     [ LID_PATTERN_N2,               8 ],
                     [ LID_PATTERN_ANGLE,            22.5 ],
